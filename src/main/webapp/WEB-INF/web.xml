@@ -41,13 +41,13 @@
         <url-pattern>*.do</url-pattern>
     </servlet-mapping>
 
-    <error-page>
-        <location>/pages/error.jsp</location>
-    </error-page>
+    <!-- <error-page>
+         <location>/pages/error.jsp</location>
+     </error-page>-->
 
-    <welcome-file-list>
-        <welcome-file>/pages/login.jsp</welcome-file>
-    </welcome-file-list>
+     <welcome-file-list>
+         <welcome-file>/pages/index.jsp</welcome-file>
+     </welcome-file-list>
 
     <display-name>TestApp</display-name>
 </web-app>

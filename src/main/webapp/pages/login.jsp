@@ -171,7 +171,7 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
 			<div id="left_hand" class="initial_left_hand"></div>
 			<div id="right_hand" class="initial_right_hand"></div>
 		</div>
-		<form action="/login.do" method="post">
+		<form action="/login/login.do" method="post">
 			<!--<p style="padding: 30px 0px 10px 0px; position: relative; margin-top:0px;margin-bottom:-30px;">
 				<span></span>
 				<input class="ipt acc" type="hidden" id="tip" value="${flag} " style="background-color:orange;color:red">

@@ -19,7 +19,7 @@
     <script charset="utf-8" src="<%=basePath %>/static/js/kindeditor-4.1.10/lang/zh_CN.js"></script>
     <%--引入json处理工具类--%>
     <script charset="utf-8" src="<%=basePath %>/static/js/jsonHandler.js"></script>
-    <title>##############欢迎来到后台！####################</title>
+    <title>后台管理系统</title>
 </head>
 <body class="easyui-layout">
     <div data-options="region:'north',title:'north',split:true,noheader:true" style="height: 80px;">
@@ -35,7 +35,7 @@
     </div>
     <div data-options="region:'center',title:'center',split:true,noheader:true" style="width:600px">
         <div id="tt" data-options="fit:true" class="easyui-tabs">
-            <div title="首页" data-options="iconCls:'icon-house'" style="padding: 20px">
+            <div title="首页" data-options="iconCls:'icon-house'" style="padding: 10px">
                 <center style="line-height: 400px">
                     <span style="font-size: 36px;color: blue;font-weight:bolder;text-shadow: 10px 10px 5px #ccc">欢迎使用xxx管理系统</span>
                 </center>
@@ -49,6 +49,22 @@
         /*动态获取后台权限树,封装好了ajax*/
         $("#menu").tree({
             url:"<%=basePath%>/system/getMenu.do",
+            onClick:function(node){
+                //先判断指定的选项卡是否存在，
+                var flag1 = $("#tt").tabs("exists",node.text);
+                if(flag1){//选项卡存在
+                    $("#tt").tabs("select",node.text);//选中一个选项卡
+                }else{//选项卡不存在
+                    //判断当前点击的是否是一级菜单
+                    if(node.href!=undefined)
+                        $("#tt").tabs('add',{
+                            title:node.text,
+                            iconCls:node.iconCls,
+                            closable:true,
+                            href:node.href
+                        });
+                }
+            }
 
         })
     })

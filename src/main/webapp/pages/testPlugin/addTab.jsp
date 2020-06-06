@@ -30,12 +30,26 @@
 <input id="btn1" type="button" value="添加新选项卡">
 </body>
 <script>
-    $("#btn1").click(function () {
+   /* $("#btn1").click(function () {
         $("#tt").tabs('add',{
             title:'选项卡',
             iconCls:'icon-add',
             closable:true
         })
-    })
+    })*/
+   $("#btn1").click(function () {
+       $("#tt").tabs('add',{
+           title:'tab',
+           closable:true,
+           content:'tab body'
+           /*tools:[{
+           iconCls:'icon-mini-refresh',
+           handler:function(){
+               alert('refresh');
+           }
+       }]*/
+
+   })
+   })
 </script>
 </html>
